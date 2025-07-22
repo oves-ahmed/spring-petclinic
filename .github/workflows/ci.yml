@@ -35,7 +35,7 @@ jobs:
       - name: deploy JAR to server
         run: |
            echo "${{secrets.SSH_PRIVATE_KEY}}" > key.pem
-           chmod 600 key.pem
-           cat key.pem
+           chmod 666 key.pem
+           ls -lrth
            scp -i key.pem -o StrictHostKeyChecking=no target/*.jar ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/azureuser   
   
