@@ -24,9 +24,8 @@ jobs:
         run: mvn test
 
       - name: Upload JAR artifact
-        uses: actions/uplaod-atifact@v3
+        uses: actions/uplaod-artifact@v3
         with:
             name: demo-app
             path: target/*.jar
-
   
